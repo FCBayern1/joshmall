@@ -18,6 +18,8 @@
         <module>mall-member</module>
         <module>renren-fast</module>
         <module>renren-generator-master</module>
+        <module>mall-common</module>
+
     </modules>
 
 </project>

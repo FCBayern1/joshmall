@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: 2e40d043-66f9-4a92-acc1-af90e80b9204
+        group: dev
+  config:
+    import:
+      - optional:nacos:mall-coupon.yml?group=dev # 监听 DEFAULT_GROUP:mall-coupon.yml
+      - optional:nacos:datasource.yml?group=dev
+      - optional:nacos:mybatis.yml?group=dev
+      - optional:nacos:other.yml?group=dev
+
