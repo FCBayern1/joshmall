@@ -1,15 +1,15 @@
 spring:
+  application:
+    name: mall_gateway
   cloud:
     gateway:
       routes:
-        - id: test_route
-          uri: https://fcbayern1.github.io/
+        - id: admin_route
+          uri: lb://renren-fast
           predicates:
-            - Query=url,sb
-        - id: qq_route
-          uri: https://www.qq.com
-          predicates:
-            - Query=url,qq
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}  #实现路径重写
     nacos:
       config:
         server-addr: 127.0.0.1:8848

@@ -31,7 +31,7 @@ public class AttrController {
     private AttrService attrService;
 
     /**
-     * 列表
+     * 查出所有的分类以及子分类，以属性结构列表组装起来
      */
     @RequestMapping("/list")
 //    @RequiresPermissions("product:attr:list")
